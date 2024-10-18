@@ -42,7 +42,7 @@ You are given an image which contains multiple headings and subheadings, perform
 }
 ```
 ### The Task
-- Take the Image `sample.png` present in this repository
+- Take the Image `sample.jpeg` present in this repository
 - create a dictionary containing headers as keys and content as value
 - submit the output screenshot
 - write the readme on the approach that you followed
