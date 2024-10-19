@@ -27,7 +27,7 @@
 
 
 ## Problem Statement:
-You are given an image which contains multiple headings and subheadings, perform suitable preprocessing techniques and computer vision approaches to extract the text in an organized format, write the python code to take the image input and give create the organized dictionary as output. 
+You are given an image which contains multiple headings and subheadings, perform suitable preprocessing techniques and computer vision approaches to extract the text in an organized format, write the python code to take the image input and create the organized dictionary as output. 
 
 ## Sample Input and output
 ### Input 
