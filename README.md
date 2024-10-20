@@ -1,60 +1,84 @@
-# ai-ml-task
+# Optical Character Recognition with EasyOCR and Color-Based Analysis
 
-## Instructions:
+## Overview
 
-1. Fork the github repo into your personal Github account and take a clone into your local system.
-    
-    Guide to Forking Github Repo: https://docs.github.com/en/github-ae@latest/get-started/quickstart/fork-a-repo
-    
-    Guide for cloning Github Repo: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
-    
-2. Instantiate Virtual Studio code or any Development environment of your choice to complete the assessment in your local working directory.
-3. Save the files and push it into forked Github github repo.
-    
-    Guide to pushing code into Github Repo: https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github
-    
-4. Record a screencast video recording demonstrating the solution in your system and upload the video into the forked github repo.
-    
-    Guide to record screen in
-    
-    a) MAC: https://support.apple.com/en-in/102618
-    
-    b) Windows: https://www.microsoft.com/en-us/windows/learning-center/how-to-record-screen-windows-11
-    
-    c) Ubuntu: https://askubuntu.com/questions/4428/how-can-i-record-my-screen
-    
-5. Share the repository link into the Google Form: [https://forms.gle/2HbLP8GNiYArZFsj8](https://forms.gle/ufqFg2Kgk5C54Amn7)
+This project utilizes **EasyOCR**, a robust OCR library, to extract text from images and analyzes the extracted text based on color associations. The goal is to identify text regions, classify them by their predominant color, and create a mapping of headings to their related elements based on proximity in the image. 
 
+## Features
 
-## Problem Statement:
-You are given an image which contains multiple headings and subheadings, perform suitable preprocessing techniques and computer vision approaches to extract the text in an organized format, write the python code to take the image input and create the organized dictionary as output. 
+- **Text Detection**: Automatically detects text in images using EasyOCR.
+- **Color Classification**: Classifies detected text regions into color categories (red, green, blue).
+- **Spatial Mapping**: Maps headings to their related text elements based on proximity.
+- **Visualization**: Marks detected text and their bounding boxes in the image.
+- **Data Export**: Saves the mapping results in a JSON file for further analysis.
 
-## Sample Input and output
-### Input 
-![image](https://github.com/user-attachments/assets/e5695bba-0dfa-4144-8c09-1cabf8096b3e)
-### Output
+## Technologies Used
+
+- **Python**: The primary programming language for this project.
+- **OpenCV**: For image processing tasks, including reading and displaying images.
+- **EasyOCR**: For optical character recognition to extract text from images.
+- **Matplotlib**: For visualizing the results by displaying marked images.
+- **NumPy**: For numerical operations and distance calculations.
+- **JSON**: For data storage and export.
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Python 3.x
+- Required libraries: `opencv-python`, `easyocr`, `matplotlib`, `numpy`
+
+You can install the required libraries using:
+
+```bash
+pip install opencv-python easyocr matplotlib numpy
+```
+
+### Usage
+
+1. **Upload Your Image**: Ensure that your image file (e.g., `sample.png`) is in the working directory.
+2. **Run the Script**: Execute the provided script to perform OCR and color analysis on the uploaded image.
+3. **View Results**: The marked image will be displayed with bounding boxes and circles indicating detected text regions. The results will also be saved to `output_mappings.json`.
+
+### Code Walkthrough
+
+- **OCR Initialization**: The script initializes the EasyOCR reader for English text.
+  
+- **Text Detection**: The image is processed, and text is extracted along with bounding boxes.
+  
+- **Color Analysis**: Each detected text region is analyzed for its average color, which determines the marking color for the bounding box.
+  
+- **Proximity Mapping**: The script calculates distances between text centers to map headings to related elements based on a predefined threshold.
+  
+- **Output**: The mappings are saved in a JSON file and printed for user reference.
+
+### Example Output
+
+The output JSON file will contain mappings similar to the following structure:
+
 ```json
 {
-  "Ashoka Chakra": "Dharma Chakra (Wheel of Law)",
-  "Saffron": "Represents strength and courage",
-  "Green": "Represents fertility, growth, and auspiciousness of the land",
-  "White": "Symbolizes peace and truth"
+    "Heading 1": ["Related Text 1", "Related Text 2"],
+    "Heading 2": ["Related Text 3"]
 }
 ```
-### The Task
-- Take the Image `sample.jpeg` present in this repository
-- create a dictionary containing headers as keys and content as value
-- submit the output screenshot
-- write the readme on the approach that you followed
 
-Our aim is to assess applicants' aptitude, innovative thinking, and their ability to comeup with new ways of solving problems, its an open ended assessment and candidate is free to innovate new ways of preprocessing or organizing the texts. 
+## Contributing
 
-### **Deliverables**:
-- python script to take in image and output dictionary
-- readme explaining steps to run the code
-- readme explaination on the approaches followed
-- demo video showing the output 
-- 
+Feel free to fork the repository, make improvements, and submit pull requests. Your contributions are welcome!
 
-**Push the source code along with a demo video of your solution into the forked github repo. Share the repo link in the google form: [https://forms.gle/2HbLP8GNiYArZFsj8](https://forms.gle/ufqFg2Kgk5C54Amn7)**
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+
+- [EasyOCR](https://github.com/JaidedAI/EasyOCR) for the powerful OCR capabilities.
+- [OpenCV](https://opencv.org/) for image processing functionalities.
+- The community for continuous support and improvements in Python libraries.
+
+---
+
 
