@@ -65,13 +65,11 @@ The output JSON file will contain mappings similar to the following structure:
 }
 ```
 
-## Contributing
-
-Feel free to fork the repository, make improvements, and submit pull requests. Your contributions are welcome!
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE.md](License.md) file for details.
+
 
 ## Acknowledgments
 
